@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <br>
+
+    <form method="post" style="margin: 10px; padding: 20px 50px 50px 30px;">
+    <p>
+        <label class="MarLft10" >Enter the name of customer : </label>
+        <input type="text" name="name"
+            placeholder=" {{searchName}} ">
+        </input>
+
+        <button type="submit" style="margin-left: 30px;">Search</button>
+    </p>
+
+
+    {% if nonamemsg == 1 %}
+        <label class="MarLft10"> Please enter a name to search!!</label>
+    {% endif %}
+
+    {% if count == 0 %}
+        <label class="MarLft10"> {{ searchName }} not found in database!</label>
+    {% endif %}
+
+    </form>
+
+    {% if count > 0 %}
+        <table class = 'tbldisplay'>
+            <tr class = 'tblhdr' >
+                <th>Id</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Phone</th>
+            </tr>
+
+            {% for i in items %}
+                <tr>
+                    <td>{{ i['CustomerId'] }}</td>
+                    <td>{{ i['Name'] }}</td>
+                    <td>{{ i['Address'] }}</td>
+                    <td>{{ i['City'] }}</td>
+                    <td>{{ i['State'] }}</td>
+                    <td>{{ i['Phone'] }}</td>
+                </tr>
+        
+            {% endfor %}
+        </table>
+    
+    {% endif %} 
+
+{% endblock %}

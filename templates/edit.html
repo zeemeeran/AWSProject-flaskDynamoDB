@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block title %} Editing Customer... {% endblock %}
+
+{% block content %}
+    <h5 style ="padding-left:40px; padding-top: 20px;">Edit cutomer details ....</h5>
+    <br/>
+    
+    <form method="post">
+        <p>
+            <label>Enter customer name whose details need to updated : </label>
+            <input type="text" name="name"
+                placeholder="{{ name }}">
+            </input>
+        </p>
+
+        <p>
+            <label style ="margin-right: 30px;">New Name </label>
+            <input type="text" name="newname"
+                placeholder="New Name (optional)">
+            </input>
+        </p>
+
+        <p>
+            <label style ="margin-right: 16px;">New Address </label>
+            <input type="text" name="address"
+                placeholder="New Addreess (optional)">
+            </input>
+        </p>
+
+        <p>
+            <label style ="margin-right: 45px;">New City</label>
+            <input type="text" name="city"
+                placeholder="city (optional)">
+            </input>
+        </p>
+
+        <p>
+            <label style ="margin-right: 36px;">New State</label>
+            <input type="text" name="state"
+                placeholder="state (optional)">
+            </input>
+        </p>
+        <p>
+            <label style ="margin-right: 27px;">New Phone</label>
+            <input type="text" name="phone"
+                placeholder="phone (optional)">
+            </input>
+        </p>
+        <p>
+        
+        <p>
+            <button type="submit">Edit Customer</button> 
+        </p>
+
+        {% if itemfound == 1 and success == 1 %}
+            Updated details of {{ name }}!!
+        {% endif %}
+
+        {% if itemfound == 0 %}
+            {{ name }} not found in customers database!!
+        {% endif %}
+
+        {% if nonamemsg == 1 %}
+            <label>Enter customer name to be updated!</label>
+        {% endif %}
+
+        {% if noeditmsg == 1 %}
+            <label>Enter update details!</label>
+        {% endif %}
+
+        {% if success == 0 %}
+            {{response}}
+        {% endif %}
+
+
+    </form>
+
+{% endblock %}
+
+

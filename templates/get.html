@@ -1,0 +1,38 @@
+<html>
+    <body>
+        Item is 
+        {{item['Name']}}
+    </body>
+</html>
+
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+
+
+<table class = 'tbldisplay'>
+    <tr class = 'tblhdr' >
+        <th>Id</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Phone</th>
+    </tr>
+
+    <tr>
+        <td>{{ item['CustomerId'] }}</td>
+        <td>{{ item['Name'] }}</td>
+        <td>{{ item['Address'] }}</td>
+        <td>{{ item['City'] }}</td>
+        <td>{{ item['State'] }}</td>
+        <td>{{ item['Phone'] }}</td>
+    </tr>
+
+    
+</table>
+   
+
+
+{% endblock %}

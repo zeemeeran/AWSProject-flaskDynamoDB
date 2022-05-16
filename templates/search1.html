@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ searchrec }}
+
+<!--{% if searchrec %}-->
+{% for s in searchrec %}
+<div>{{ s[0] }} --> {{ s[1] }}, </div>
+{% endfor %}
+<!--{% endif %} -->
+
+{% endblock %}

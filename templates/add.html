@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title %}Add new Customer!{% endblock %}
+
+
+{% block content %}
+    <h5 style ="padding-left:40px; padding-top: 20px;">Enter details of new customer...</h5>
+    <br/>
+    
+    <form method="post">
+        <p>
+            <label style ="margin-right: 33px;">Name </label>
+            <input type="text" name="name"
+                placeholder="Name">
+            </input>
+        </p>
+
+        <p>
+            <label style ="margin-right: 20px;">Address </label>
+            <input type="text" name="address"
+                placeholder="address">
+            </input>
+        </p>
+
+        <p>
+            <label style ="margin-right: 49px;">City</label>
+            <input type="text" name="city"
+                placeholder="city">
+            </input>
+        </p>
+
+        <p>
+            <label style ="margin-right: 40px;">State</label>
+            <input type="text" name="state"
+                placeholder="state">
+            </input>
+        </p>
+        <p>
+            <label style ="margin-right: 30px;">Phone</label>
+            <input type="text" name="phone"
+                placeholder="phone">
+            </input>
+        </p>
+                
+        <p>
+            <button type="submit">Add Customer</button>
+        </p>
+        {% if name %}
+            {% if success %}    
+                {{ name }} has been successfully added to the database!!
+            {% endif %}
+        {% endif %}
+
+        {% if nonamemsg == 1 %}
+            <label>Enter details please!</label>
+        {% endif %}
+    </form>
+
+
+
+{% endblock %}
