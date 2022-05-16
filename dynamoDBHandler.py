@@ -61,6 +61,8 @@ def displayCustomers():
     response = table.scan()
     data = response['Items']
 
+    # response can get only data upto 1 MB and the loop blow scans more items and adds to data
+     
     while 'LastEvaluatedKey' in response:
         response = table.scan(ExclusiveStartKey=response['LastEvaluatedKey'])
         data.extend(response['Items'])
