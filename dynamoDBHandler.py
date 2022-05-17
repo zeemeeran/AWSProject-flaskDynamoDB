@@ -3,6 +3,8 @@ Author - Zahida Meeran
 Date - 5/12/2022
 Reference : https://boto3.amazonaws.com/v1/documentation/api/latest/guide/dynamodb.html
 
+This script has the backend functions that access the dynamodb database
+
 '''
 
 
