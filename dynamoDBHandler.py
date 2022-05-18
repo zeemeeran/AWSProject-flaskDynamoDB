@@ -55,6 +55,8 @@ def createCustomersTable():
     # Print out some data about the table.
     print(table.item_count)
 
+
+# customers table is extracted
 table= dynamodb.Table('customers')
 
 
@@ -62,6 +64,7 @@ def displayCustomers():
 
     response = table.scan()
     data = response['Items']
+    print(response)
 
     # response can get only data upto 1 MB and the loop blow scans more items and adds to data
      
